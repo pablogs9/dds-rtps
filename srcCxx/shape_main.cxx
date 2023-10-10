@@ -146,9 +146,9 @@ public:
 
     static std::string to_string(OwnershipQosPolicyKind ownership_kind_value)
     {
-        if (ownership_kind_value == SHARED_OWNERSHIP_QOS){
+        if (ownership_kind_value == OwnershipQosPolicyKind::SHARED_OWNERSHIP_QOS){
             return "SHARED";
-        } else if (ownership_kind_value == EXCLUSIVE_OWNERSHIP_QOS){
+        } else if (ownership_kind_value == OwnershipQosPolicyKind::EXCLUSIVE_OWNERSHIP_QOS){
             return "EXCLUSIVE";
         }
         return "Error stringifying Ownership kind.";
