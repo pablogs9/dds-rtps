@@ -864,6 +864,11 @@ public:
     //-------------------------------------------------------------
     bool init_subscriber(ShapeOptions *options)
     {
+        if (options->color != NULL)
+        {
+            color = strdup(options->color);
+        }
+
         SubscriberQos sub_qos;
         DataReaderQos dr_qos;
 
@@ -932,7 +937,13 @@ public:
 
                 retval = typed_reader->take_next_sample( shape, sample_info );
                 if (retval == RETCODE_OK) {
-                    if (sample_info.valid_data)  {
+                    bool color_match = true;
+                    if (color != NULL)
+                    {
+                        color_match = strcmp(shape.color.c_str(), color) == 0;
+                    }
+
+                    if (sample_info.valid_data && color_match)  {
                         printf("%-10s %-10s %03d %03d [%d]\n", dr->get_topicdescription().get_name() NAME_ACCESSOR,
                                 shape.color.c_str(),
                                 shape.x,

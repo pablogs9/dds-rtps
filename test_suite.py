@@ -246,5 +246,5 @@ rtps_test_suite_1 = {
 
 
 # rtps_test_suite_1 = {
-#     'Test_Deadline_0' : [['-P -d 1 -t Square -f 3 -x 1', '-S -d 1 -t Square -f 5 -x 1'], [ReturnCode.OK, ReturnCode.OK]],
+#     'Test_History_3' : [['-P -d 1 -t Square -k 0 -x 1', '-S -d 1 -t Square -k 0 -x 1'], [ReturnCode.OK, ReturnCode.OK]],
 # }

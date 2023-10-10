@@ -712,7 +712,7 @@ def main():
             for test_case_name, test_case_parameters in t_suite_dict.items():
                 # TestCase is a class from junitparser whose attributes
                 # are: name and result (OK, Failure, Error or Skipped).
-
+                time.sleep(1)
                 if options['test_cases_disabled'] is not None \
                         and test_case_name in options['test_cases_disabled']:
                     # if there are test cases disabled and the script is
